@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour {
 	public TextMeshProUGUI countText;
 	public GameObject winTextObject;
 
-        private float movementX;
-        private float movementY;
+  private float movementX;
+  private float movementY;
 
 	private Rigidbody rb;
 	private int count;
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-        void OnMove(InputValue value)
+  void OnMove(InputValue value)
         {
         	Vector2 v = value.Get<Vector2>();
 
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour {
         	movementY = v.y;
         }
 
-        void SetCountText()
+  void SetCountText()
 	{
 		countText.text = "Count: " + count.ToString();
 
