@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public Animator animator;
     Vector3 velocity;
     bool isGrounded;
     CharacterController controller;
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
 		SetCountText();
         // Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
         winTextObject.SetActive(false);
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime); 
+        animator.SetFloat("speed", 1f);
     }
     void OnTriggerEnter(Collider other) 
 	{
