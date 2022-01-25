@@ -23,10 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     private int count;
     public TextMeshProUGUI countText;
-    public GameObject winTextObject;
+	public GameObject winTextObject;
     bool InGameMenuOpened;
-
-
 
     // Start is called before the first frame update
     void Start()
