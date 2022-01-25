@@ -25,20 +25,16 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI countText;
 	public GameObject winTextObject;
     bool InGameMenuOpened;
-
-    // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
         count = 0;
         SetCountText();
-        // Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
         winTextObject.SetActive(false);
         animator = gameObject.transform.Find("PlayerModel").GetComponent<Animator>();
         InGameMenuOpened = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey("q"))
